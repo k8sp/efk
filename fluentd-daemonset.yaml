@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  labels:
+    app: fluentd
+  name: fluentd
+spec:
+  template:
+    metadata:
+      labels:
+        app: fluentd
+    spec:
+      containers:
+      - name: fluentd
+        image: yancey1989/custom-fluentd:0.12.29
+        volumeMounts:
+        - mountPath: /var/lib/docker/containers
+          name: "docker-logs"
+      volumes:
+      - name: "docker-logs"
+        hostPath:
+          path: "/var/lib/docker/containers"
