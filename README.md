@@ -8,8 +8,7 @@ EFK是一种日志的收集，存储，查询的技术方案，其中包括：
 * Kibana：自助的查询UI，提供界面化的查询工具
 
 #### 架构
-![Alt text](./EFK.png)
-
+<img src="./EFK.png" width=600>
 
 #### 部署
 ##### 制作fluentd的Docker Image(若没有定制化fluentd的需求，可跳过此步骤)
